@@ -24,6 +24,7 @@ body{
   font-size: 60px;
   color: #56cd75;
   float: right;
+  cursor: pointer;
   margin-top: 10%;
   margin-right: 10%;
 }
