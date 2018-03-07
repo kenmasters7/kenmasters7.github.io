@@ -4,12 +4,55 @@ body{
   background: #181818;
   font-family: 'Righteous', cursive;
 }
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
 
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #7abe79;
+}
+
+::-webkit-scrollbar-track {
+  background: #666666;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
 .nav{
   position: fixed;
   width: 100vw;
   height: 80px;
-  background: pink;
+  background: #56cd75;
+  left:0;
+  top: 0;
+  z-index: 5;
 }
 .navcontent{
   background: #000;
@@ -111,9 +154,100 @@ body{
   transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+#bubbles{
+  position: absolute;
+  height:;
+  width:99%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.cover{
+  margin-top: 80px;
+  overflow-x: hidden;
+  width: 100%;
+  height: 80vh;
+  border-bottom: 1px solid #eee;
+}
+
+.title{
+  font-size:10rem;
+  color: #eee;
+  /* text-align: center; */
+  position: absolute;
+  margin-left: 25%;
+  margin-top: 8%;
+}
+
+.title::after{
+  content: "we create custome web-designs and satisfying user-experience";
+  display: block;
+  font-size: 1.2rem;
+  color: #999;
+  margin-left: 3%;
+}
+
+.title::first-letter{
+  color: #38beff;
+}
+.title::first-letter::after{
+  content: "a";
+}
+.title>span:nth-of-type(1){
+  color: #fe6aff;
+}
+.title span:nth-of-type(2){
+  display: block;
+  margin-top: -60px;
+}
+.title span:nth-of-type(2)::before{
+  content: "";
+  height:130px;
+  top: 46%;
+  border-left: 2px solid #56cd75;
+  position: absolute;
+}
+
+/*
+#fe6aff
+#38beff
+#fafaf9 */
+
+.featdiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-80px);
+}
+.featdiv div{
+  height: 200px;
+  width: calc(80%/3 - 50px);
+  background: black;
+  border-radius: 5%;
+}
 
 @media (max-width:450px) {
   .navlist{
     margin-top: 20%;
+  }
+  .title{
+    font-size:70px;
+    margin-left: 1%;
+    margin-top: 35vh;
+  }
+  .title span:nth-of-type(2){
+    margin-top: -20px;
+  }
+  .title span:nth-of-type(2)::before{
+    height: 62px;
+    top:40%;
+  }
+  .featdiv{
+    flex-direction: column;
+  }
+  .featdiv div{
+    height: 200px;
+    width: 80%;
+    margin-bottom: 20px;
   }
 }
