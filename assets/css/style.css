@@ -169,7 +169,6 @@ body{
   height: 80vh;
   border-bottom: 1px solid #eee;
 }
-
 .title{
   font-size:10rem;
   color: #eee;
@@ -186,7 +185,11 @@ body{
   color: #999;
   margin-left: 3%;
 }
-
+.titlegrad{
+  background: linear-gradient(to top,#38beff,#eee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .title::first-letter{
   color: #38beff;
 }
@@ -222,8 +225,54 @@ body{
 .featdiv div{
   height: 200px;
   width: calc(80%/3 - 50px);
+  color: #eee;
   background: black;
   border-radius: 5%;
+  box-shadow: 1px 1px 25px 0px black;
+  text-align: center;
+}
+.featdiv div:first-of-type{
+  background-image: url(/assets/css/consult.gif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.featdiv>div>span{
+  font-size: 25px;
+}
+.featdivdes:first-of-type::after{
+  content:"Talk to us about your business";
+  display: block;
+  margin-top: 32%;
+  font-size: 18px;
+  color: white;
+}
+.featdiv div:nth-of-type(2){
+  background-image: url(/assets/css/dcool.gif);
+  background-size: cover;
+}
+.featdiv div:nth-of-type(3){
+  background-image: url(/assets/css/toronto.gif);
+  background-size: contain;
+  background-position: center;
+  background-color: #921e2a;
+  background-repeat: no-repeat;
+}
+
+.section2{
+  width: 100%;
+  height: 600px;
+}
+.section2>div{
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  background: #eee;
+}
+.section2>div::after{
+  content: "";
+  background: pink;
+  margin-left: 40px;
 }
 
 @media (max-width:450px) {
