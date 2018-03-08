@@ -99,3 +99,40 @@ init();
 
 animate();
 // Canvas end
+
+
+var $document = $(document),
+    nav = $('.nav');
+
+ $document.scroll(function() {
+   if ($document.scrollTop() >= 50) {
+     nav.css('box-shadow','0px 0px 15px 0px #222');
+   } else {
+     nav.css('box-shadow','none');
+   }
+ });
+
+
+ $(".sec1").mouseenter(function() {
+   console.log("okay");
+   $('.section2').css('background','#211046');
+   // $('.section2').css('background-image','url(/assets/css/choco.gif)');
+   // $('.section2').css('background-repeat','no-repeat');
+   // $('.section2').css('background-position','center');
+   $('.secback').fadeIn('');
+ });
+ $('.sec1').mouseleave(function(){
+   $('.section2').css('background','transparent');
+   $('.secback').fadeOut('');
+ });
+
+ $(".sec2").mouseenter(function() {
+   console.log("okay");
+   $('.section2').css('background','#66af4e');
+   // $('.section2').css('background-image','url(/assets/css/ui.gif)');
+   $('.secback').fadeIn('');
+ });
+ $('.sec2').mouseleave(function(){
+   $('.section2').css('background','transparent');
+   $('.secback').fadeOut('');
+ });
