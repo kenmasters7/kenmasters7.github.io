@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Fredoka+One|Monoton');
 
 body{
   /* background: #010101; */
@@ -65,13 +66,13 @@ body{
   display: none;
   left: 0;
   top: 0;
-  height: 100vh;
+  height: 101vh;
   width: 100%;
   z-index: 8;
 }
 .navlist{
   font-size: 60px;
-  color: #56cd75;
+  color: #38beff;
   float: right;
   cursor: pointer;
   margin-top: 10%;
@@ -176,13 +177,15 @@ body{
   border-bottom: 1px solid #eee;
 }
 .title{
-  font-size:9rem;
+  font-size:7rem;
   letter-spacing: .6rem;
   color: #eee;
   /* text-align: center; */
   position: absolute;
   margin-left: 25%;
   margin-top: 8%;
+  font-family: Monoton;
+  font-family: "Fredoka One";
 }
 
 .title::after{
@@ -194,6 +197,7 @@ body{
   margin-left: 3%;
 }
 .titlegrad{
+  line-height: 230px;
   background: linear-gradient(to top,#38beff,#eee);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -392,7 +396,7 @@ body{
   }
   .title{
     letter-spacing: 2px;
-    font-size:70px;
+    font-size:68px;
     margin-left: 1%;
     margin-top: 35vh;
   }
@@ -402,6 +406,9 @@ body{
   .title span:nth-of-type(2)::before{
     height: 62px;
     top:40%;
+  }
+  .titlegrad{
+    line-height: 100px;
   }
   .featdiv{
     flex-direction: column;
