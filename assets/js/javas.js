@@ -5,134 +5,133 @@
   })
 })();
 
-// canvas
-var canvas = document.querySelector('#bubbles');
+var $document = $(document),
+nav = $('.nav');
 
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-var c = canvas.getContext('2d');
-
-var mouse = {
-  x: undefined,
-  y: undefined
-}
-
-var maxRadius = 40;
-var minRadius = 2;
-var colourArray = [
-  '#17468A',
-  '#4C8DCA',
-  '#78E5EB',
-  '#F5F0F2',
-  '#E12D53'
-]
-
-window.addEventListener('resize', function() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  init()
-
+$document.scroll(function() {
+  if ($document.scrollTop() >= 50) {
+    nav.css('box-shadow','0px 0px 15px 0px #222');
+  } else {
+    nav.css('box-shadow','none');
+  }
 });
 
-function Circle(x, y, dx, dy, radius, colorFill) {
-  this.x = x;
-  this.y = y;
-  this.dx = dx;
-  this.dy = dy;
-  this.radius = radius;
-  this.minRadius = radius;
-  this.draw = function() {
-    c.beginPath();
-    c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+$(".sec1").mouseenter(function() {
+  console.log("okay");
+  $('.section2').css('background','#211046');
+  // $('.section2').css('background-image','url(/assets/css/choco.gif)');
+  // $('.section2').css('background-repeat','no-repeat');
+  // $('.section2').css('background-position','center');
+  $('.secback').fadeIn('');
+});
+$('.sec1').mouseleave(function(){
+  $('.section2').css('background','transparent');
+  $('.secback').fadeOut('');
+});
 
-    c.fillStyle = colorFill
-    c.fill();
-  }
-
-  this.update = function() {
-    if ((this.x + this.radius) > innerWidth || (this.x - this.radius) < 0) {
-      this.dx = -this.dx;
-    }
-    if ((this.y + this.radius) > innerHeight || (this.y - this.radius) < 0) {
-      this.dy = -this.dy;
-    }
-    this.y = this.y + this.dy;
-    this.x = this.x + this.dx;
-    //interactivaity
+$(".sec2").mouseenter(function() {
+  console.log("okay");
+  $('.section2').css('background','#66af4e');
+  // $('.section2').css('background-image','url(/assets/css/ui.gif)');
+  $('.secback2').fadeIn('');
+});
+$('.sec2').mouseleave(function(){
+  $('.section2').css('background','transparent');
+  $('.secback2').fadeOut('');
+});
 
 
-    this.draw();
-  }
-}
-
-
-var circleArray = [];
-
-function init() {
-
-  circleArray = [];
-  //red dots
-  for (var i = 0; i < 30; i++) {
-    var x = Math.random() * (innerWidth - radius * 2) + radius;
-    var dx = (Math.random() - 0.5) * 2;
-    var y = Math.random() * (innerHeight - radius * 2) + radius;
-    var dy = (Math.random() - 0.5) * 2;
-    var radius = Math.random() * 4 + 1;
-    circleArray.push(new Circle(x, y, dx, dy, radius, colourArray[Math.floor(Math.random() * colourArray.length)]));
-  }
-}
-
-function animate() {
-  requestAnimationFrame(animate);
-  c.clearRect(0, 0, innerWidth, innerHeight);
-
-  for (var i = 0; i < circleArray.length; i++) {
-    circleArray[i].update();
-  }
-
-}
-
-init();
-
-animate();
-// Canvas end
-
-
-var $document = $(document),
-    nav = $('.nav');
-
- $document.scroll(function() {
-   if ($document.scrollTop() >= 50) {
-     nav.css('box-shadow','0px 0px 15px 0px #222');
-   } else {
-     nav.css('box-shadow','none');
-   }
- });
-
-
- $(".sec1").mouseenter(function() {
-   console.log("okay");
-   $('.section2').css('background','#211046');
-   // $('.section2').css('background-image','url(/assets/css/choco.gif)');
-   // $('.section2').css('background-repeat','no-repeat');
-   // $('.section2').css('background-position','center');
-   $('.secback').fadeIn('');
- });
- $('.sec1').mouseleave(function(){
-   $('.section2').css('background','transparent');
-   $('.secback').fadeOut('');
- });
-
- $(".sec2").mouseenter(function() {
-   console.log("okay");
-   $('.section2').css('background','#66af4e');
-   // $('.section2').css('background-image','url(/assets/css/ui.gif)');
-   $('.secback').fadeIn('');
- });
- $('.sec2').mouseleave(function(){
-   $('.section2').css('background','transparent');
-   $('.secback').fadeOut('');
- });
+// // canvas
+// var canvas = document.querySelector('#bubbles');
+//
+//
+// canvas.width = window.innerWidth;
+// canvas.height = window.innerHeight;
+//
+// var c = canvas.getContext('2d');
+//
+// var mouse = {
+//   x: undefined,
+//   y: undefined
+// }
+//
+// var maxRadius = 40;
+// var minRadius = 2;
+// var colourArray = [
+//   '#17468A',
+//   '#4C8DCA',
+//   '#78E5EB',
+//   '#F5F0F2',
+//   '#E12D53'
+// ]
+//
+// window.addEventListener('resize', function() {
+//   canvas.width = window.innerWidth;
+//   canvas.height = window.innerHeight;
+//
+//   init()
+//
+// });
+//
+// function Circle(x, y, dx, dy, radius, colorFill) {
+//   this.x = x;
+//   this.y = y;
+//   this.dx = dx;
+//   this.dy = dy;
+//   this.radius = radius;
+//   this.minRadius = radius;
+//   this.draw = function() {
+//     c.beginPath();
+//     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+//
+//     c.fillStyle = colorFill
+//     c.fill();
+//   }
+//
+//   this.update = function() {
+//     if ((this.x + this.radius) > innerWidth || (this.x - this.radius) < 0) {
+//       this.dx = -this.dx;
+//     }
+//     if ((this.y + this.radius) > innerHeight || (this.y - this.radius) < 0) {
+//       this.dy = -this.dy;
+//     }
+//     this.y = this.y + this.dy;
+//     this.x = this.x + this.dx;
+//     //interactivaity
+//
+//
+//     this.draw();
+//   }
+// }
+//
+//
+// var circleArray = [];
+//
+// function init() {
+//
+//   circleArray = [];
+//   //red dots
+//   for (var i = 0; i < 30; i++) {
+//     var x = Math.random() * (innerWidth - radius * 2) + radius;
+//     var dx = (Math.random() - 0.5) * 2;
+//     var y = Math.random() * (innerHeight - radius * 2) + radius;
+//     var dy = (Math.random() - 0.5) * 2;
+//     var radius = Math.random() * 4 + 1;
+//     circleArray.push(new Circle(x, y, dx, dy, radius, colourArray[Math.floor(Math.random() * colourArray.length)]));
+//   }
+// }
+//
+// function animate() {
+//   requestAnimationFrame(animate);
+//   c.clearRect(0, 0, innerWidth, innerHeight);
+//
+//   for (var i = 0; i < circleArray.length; i++) {
+//     circleArray[i].update();
+//   }
+//
+// }
+//
+// init();
+//
+// animate();
+// // Canvas end
