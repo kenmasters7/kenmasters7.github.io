@@ -5,6 +5,8 @@ body{
   /* background: #010101; */
   background: #02020a;
   font-family: 'Righteous', cursive;
+  margin: 0;
+  padding: 0;
 }
 ::-webkit-scrollbar {
   width: 3px;
@@ -386,6 +388,44 @@ body{
 .secword>p{
   color: #999;
 }
+
+a{
+  text-decoration: none;
+  color: #eee;
+}
+
+.calltoa{
+  height: 320px;
+  width:100%;
+  margin: 0;
+  padding: 0;
+  background: #333;
+  color: #eee;
+  background-image: url(/assets/css/bg.png);
+  background-position: center;
+}
+.calltoa>div:first-of-type{
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  background:#3029c47d;
+}
+.calltoa>div>span:first-of-type{
+  font-size: 4rem;
+}
+.calltoa>div>span{
+  letter-spacing: 2px;
+  background:#181818b0;
+  padding: 6px;
+  margin: 4px 0;
+  border-radius: 6px;
+}
+
+
 
 /* MEDIA QUERIES FOR MOBILE DEVICES */
 /* starts here */
