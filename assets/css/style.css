@@ -336,7 +336,7 @@ body{
   padding-right: 40px;
   padding-left: 30px;
   font-size: 30px;
-
+  
 }
 .section2>div:nth-of-type(2)::after{
   content: "+Conversion";
@@ -403,6 +403,7 @@ a{
   color: #eee;
   background-image: url(/assets/css/bg.png);
   background-position: center;
+  background-attachment: fixed;
 }
 .calltoa>div:first-of-type{
   margin-top: 5%;
@@ -419,12 +420,20 @@ a{
 }
 .calltoa>div>span{
   letter-spacing: 2px;
-  background:#181818b0;
+  background:#060505b0;
   padding: 6px;
   margin: 4px 0;
   border-radius: 6px;
 }
 
+.secholder{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
 
 /* MEDIA QUERIES FOR MOBILE DEVICES */
@@ -490,27 +499,9 @@ a{
     text-align: center;
     flex-grow: 1;
     width: 100%;
-    padding: 10px 60px;
+    padding: 10px 40px;
   }
-  .secword:nth-of-type(2){
-    display: none;
-  }
-  #img2::after{
-    content:"Okay";
-    font-size: 40px;
-    text-align: center;
-    display: block;
-    width: auto;
-    color: #eee;
-  }
-  #img3::before{
-    content: "Lokay this is not what i thought it should should be but now it seems okay too so okay great";
-    margin-top: 10px;
-    margin-bottom: 25px;
-    width: 200px;
-    text-align: center;
-    display: block;
-    font-size: 20px;
-    color: #999;
+  .secholder:nth-of-type(2)>div:first-of-type{
+    order:2;
   }
 }
